@@ -32,11 +32,11 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
-        main_name= findViewById(R.id.name_sandwich);
-        place_origin =findViewById(R.id.origin_tv);
-        description=findViewById(R.id.description_tv);
-        alsoknownAs=findViewById(R.id.also_known_tv);
-        ingredients=findViewById(R.id.ingredients_tv);
+        main_name = findViewById(R.id.name_sandwich);
+        place_origin = findViewById(R.id.origin_tv);
+        description = findViewById(R.id.description_tv);
+        alsoknownAs = findViewById(R.id.also_known_tv);
+        ingredients = findViewById(R.id.ingredients_tv);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -65,11 +65,6 @@ public class DetailActivity extends AppCompatActivity {
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
-
-
-
-
-
     }
 
     private void closeOnError() {
@@ -83,7 +78,7 @@ public class DetailActivity extends AppCompatActivity {
         if(sandwich.getIngredients() !=null && sandwich.getIngredients().size() >0) {
             ingredients.setText(sandwich.getIngredients().toString());
         }
-        place_origin.setText(sandwich.getIngredients().toString());
+        place_origin.setText(sandwich.getPlaceOfOrigin());
         if (sandwich.getAlsoKnownAs() != null && sandwich.getAlsoKnownAs().size() > 0) {
             alsoknownAs.setText(sandwich.getAlsoKnownAs().toString());
         }
